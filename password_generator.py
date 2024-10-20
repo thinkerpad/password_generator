@@ -6,6 +6,7 @@
 This is a password generator program. It will be automatically be copied to your clipboard.
 You can get the generated password either running the program in an IDE
 or using terminal command by typing the filename. 
+
 To set up typing filename in the terminal command, following these instructions:
     ** Windows **
     1. Create a new file in Notepad.
@@ -63,17 +64,17 @@ def generatePasswordPattern():
     password_pattern = []
     
     while len(password_pattern) < PASSWORD_LENGTH:
-        randomInt = random.randint(UPPERCASE, NUMBERS)
-        if randomInt == UPPERCASE and passwordTemplate["uppercase"] < 1:
+        randomPatternChoice = random.randint(UPPERCASE, NUMBERS)
+        if randomPatternChoice == UPPERCASE and passwordTemplate["uppercase"] < 1:
             password_pattern.append(getRandomChar(uppercase))
             passwordTemplate["uppercase"] += 1
-        elif randomInt == LOWERCASE and passwordTemplate["lowercase"] < 10:
+        elif randomPatternChoice == LOWERCASE and passwordTemplate["lowercase"] < 10:
             password_pattern.append(getRandomChar(lowercase))
             passwordTemplate["lowercase"] += 1
-        elif randomInt == SYMBOLS and passwordTemplate["symbols"] < 3:
+        elif randomPatternChoice == SYMBOLS and passwordTemplate["symbols"] < 3:
             password_pattern.append(getRandomChar(symbols))
             passwordTemplate["symbols"] += 1
-        elif randomInt == NUMBERS and passwordTemplate["numbers"] < 1:
+        elif randomPatternChoice == NUMBERS and passwordTemplate["numbers"] < 1:
             password_pattern.append(getRandomChar(numbers))
             passwordTemplate["numbers"] += 1
 
